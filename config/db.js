@@ -11,3 +11,14 @@ const connection = mysql.createConnection({
     rejectUnauthorized: false
   }
 });
+
+connection.connect((err) => {
+  if (err) {
+    console.log("Error MySQL:", err.message);
+    return;
+  }
+
+  console.log("MySQL conectado");
+});
+
+module.exports = connection;
