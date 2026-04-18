@@ -1,33 +1,23 @@
 const express = require('express');
 const router = express.Router();
-
 const controller = require('../controllers/productos.controller');
-console.log(controller);
 
+// Log para verificar que el controlador cargó bien
+console.log('Controlador de productos cargado:', controller);
+
+// Obtener todos los productos
 router.get('/', controller.getAll);
 
+// Obtener por categoría
 router.get('/categoria/:categoria', controller.getByCategoria);
 
+// Obtener por ID, Actualizar y Eliminar
+// Usamos :idPlatillo para que coincida con lo que espera el controlador (req.params.idPlatillo)
 router.get('/:idPlatillo', controller.getById);
-
-router.post('/', controller.create);
 router.put('/:idPlatillo', controller.update);
 router.delete('/:idPlatillo', controller.delete);
 
-module.exports = router;const express = require('express');
-const router = express.Router();
-
-const controller = require('../controllers/productos.controller');
-console.log(controller);
-
-router.get('/', controller.getAll);
-
-router.get('/categoria/:categoria', controller.getByCategoria);
-
-router.get('/:id', controller.getById);
-
+// Crear nuevo producto
 router.post('/', controller.create);
-router.put('/:id', controller.update);
-router.delete('/:id', controller.delete);
 
 module.exports = router;
