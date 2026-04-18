@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
+
 const productosRoutes = require('./routes/productos.routes');
 const cafeteriaRoutes = require('./routes/cafeteria.routes'); 
 const errorMiddleware = require('./middleware/error.middlewares');
