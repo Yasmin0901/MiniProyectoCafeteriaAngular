@@ -12,10 +12,10 @@ exports.createProducto = (producto, callback)=>{
     );
 };
 
-exports.deleteProducto = (id, callback)=>{
+exports.deleteProducto = (idPlatillo, callback)=>{
     db.query(
         'DELETE FROM productos WHERE id=?',
-        [id],
+        [idPlatillo],
         callback
     );
 };

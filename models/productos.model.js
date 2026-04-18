@@ -6,10 +6,10 @@ exports.getAll = (callback) => {
 };
 
 // OBTENER POR ID
-exports.getById = (id, callback) => {
+exports.getById = (idPlatillo, callback) => {
     db.query(
         'SELECT * FROM productos WHERE id=?',
-        [id],
+        [idPlatillo],
         callback
     );
 };
@@ -24,19 +24,19 @@ exports.create = (producto, callback) => {
 };
 
 // ACTUALIZAR
-exports.update = (id, producto, callback) => {
+exports.update = (idPlatillo, producto, callback) => {
     db.query(
         'UPDATE productos SET ? WHERE id=?',
-        [producto, id],
+        [producto, idPlatillo],
         callback
     );
 };
 
 // ELIMINAR
-exports.delete = (id, callback) => {
+exports.delete = (idPlatillo, callback) => {
     db.query(
         'DELETE FROM productos WHERE id=?',
-        [id],
+        [idPlatillo],
         callback
     );
 };
