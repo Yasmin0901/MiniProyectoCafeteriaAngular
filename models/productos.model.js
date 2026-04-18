@@ -2,32 +2,32 @@ const db = require('../config/db');
 
 // OBTENER TODOS
 exports.getAll = (callback) => {
-    db.query('SELECT * FROM platillo', callback);
+    db.query('SELECT * FROM productos', callback);
 };
 
 // OBTENER POR ID
 exports.getById = (id, callback) => {
     db.query(
-        'SELECT * FROM platillo WHERE id=?',
+        'SELECT * FROM productos WHERE id=?',
         [id],
         callback
     );
 };
 
 // CREAR
-exports.create = (platillo, callback) => {
+exports.create = (producto, callback) => {
     db.query(
-        'INSERT INTO platillo SET ?',
-        platillo,
+        'INSERT INTO productos SET ?',
+        producto,
         callback
     );
 };
 
 // ACTUALIZAR
-exports.update = (id, platillo, callback) => {
+exports.update = (id, producto, callback) => {
     db.query(
-        'UPDATE platillo SET ? WHERE id=?',
-        [platillo, id],
+        'UPDATE productos SET ? WHERE id=?',
+        [producto, id],
         callback
     );
 };
@@ -35,7 +35,7 @@ exports.update = (id, platillo, callback) => {
 // ELIMINAR
 exports.delete = (id, callback) => {
     db.query(
-        'DELETE FROM platillo WHERE id=?',
+        'DELETE FROM productos WHERE id=?',
         [id],
         callback
     );
@@ -44,7 +44,7 @@ exports.delete = (id, callback) => {
 // POR CATEGORÍA
 exports.getByCategoria = (categoria, callback) => {
     db.query(
-        'SELECT * FROM platillo WHERE categoria=?',
+        'SELECT * FROM productos WHERE categoria=?',
         [categoria],
         callback
     );
