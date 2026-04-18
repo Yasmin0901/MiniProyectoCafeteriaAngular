@@ -1,4 +1,4 @@
-/ Archivo: routes/pedidos.routes.js
+// Archivo: routes/pedidos.routes.js
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/pedidos.controller');
